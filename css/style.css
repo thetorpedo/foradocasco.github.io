@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1em;
+  font-family: "Days one", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+::-webkit-scrollbar-track {
+  background: #c9edaf;
+}
+::-webkit-scrollbar-thumb {
+  background: #4cb900;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #023c02;
+}
+
+/* HEADER COMEÇA AQUI +++ */
+
+header{
+  background-color: #4cb900;
+  display: flex;
+  justify-content: center !important;
+  font-family: "Titan one", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+
+  .nav-link{
+    color: #c9edaf;
+  }
+
+  .nav-link:hover{
+    color: white;
+  }
+  
+  .nav-link.active{
+    color: white !important;
+  }
+
+  li.nav-item.instagram > a > i{
+    color: white;
+  }
+
+  button.navbar-toggler{
+    color: white;
+    border: 0.2rem solid white;
+    opacity: 1;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.instagram{
+  font-size: 1.5625rem;
+  margin: 0 1.25rem;
+}
+
+/* HEADER TERMINA AQUI /// */
+
+
+/* MAIN-INDEX COMEÇA AQUI +++ */
+
+main{
+  font-family: "Days one",sans-serif;
+  color: #023c02;
+}
+
+#main-new{
+  height: 80vh;
+  overflow: hidden;
+  background-image: url(https://www.guacira.com.br/images/receitas/0162398001588171823.webp);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  .row{
+    height: 100%;
+    padding: 0;
+  }
+
+  .card{
+    margin: 0.9375rem;
+    border: 0;
+    border-radius: 1.25rem;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/584/379/small_2x/Abstract_white_background_15.jpg);
+    background-size: cover;
+
+    a{
+      margin-top: 0.625rem;
+      background-color: #ddab00;
+      border: 0;
+      border-radius: 1.25rem;
+    }
+
+    a.encomendar{
+      background-color: #4cb900;
+      border-radius: 1.25rem;
+    }
+
+  }
+
+  .card-body{
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+    color: #023c02;
+  }
+
+  .card-title{
+    font-family: "Titan one", sans-serif;
+    line-height: 2.1875rem;
+  }
+
+}
+
+#main-details{
+  background-image: url(https://i.ibb.co/PYs1SKy/05.jpg);
+  background-size: cover;
+  z-index: -1;
+
+  h2{
+    margin: 4.375rem 0 2.5rem 0;
+  }
+}
+  .details-icon span{
+    font-size: 4.375rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.25rem;
+    height: 6.25rem;
+    border: solid 0.875rem;
+    border-color: #023c02;
+    border-radius: 50%;
+    margin: 0 0.3125rem;
+    padding: 40px;
+  }
+
+  .details div{
+    width: fit-content;
+    margin-bottom: 2.5rem;
+  }
+
+  .details-box{
+    margin: 0 0.9375rem; 
+  }
+
+  .details-text p{
+    font-size: 1.5625rem;
+    line-height: 1.5625rem;
+    font-family: "Titan one", sans-serif;
+    margin: 0;
+    padding-left: 0.3125rem;
+    width: fit-content;
+  }
+
+
+#main-gallery{
+  position: relative;
+  margin: 0;
+
+  .row > *{
+    padding: 0;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  background-color: #4cb900;
+  padding: 1.875rem !important;
+
+  img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.25rem;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 1.125rem;
+  background: #4cb900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet-active {
+  background: #023c02 !important;
+}
+
+#main-form{
+  padding: 3.125rem 0;
+  background-image: url(https://i.ibb.co/PYs1SKy/05.jpg);
+  background-size: cover;
+
+  
+  .form-control{
+    border-radius: 0.9375rem;
+  }
+
+  a, button {
+    background-color: #ddab00;
+      border: 0;
+      border-radius: 1.25rem;
+}
+
+.card{
+    margin: 0.9375rem;
+    border-radius: 1.25rem;
+    background-color: #023c02;
+    color: white;
+
+    a{
+      font-size: 0.9375rem;
+    }
+
+  }
+
+.h2, .h3{
+  font-family: "Titan one",sans-serif;
+}
+
+}
+
+/* Aplica a margem somente em telas extra large */
+@media (min-width: 1200px) {
+    #main-form > div {
+        padding: 0 20%;
+        margin: 0;
+    }
+}
+
+/* Aplica a margem somente em telas menores que extra large */
+@media (max-width: 1200px) {
+    #main-form > div {
+        padding: 0 5%;
+        margin: 0;
+    }
+}
+
+/* MAIN-INDEX TERMINA AQUI --- */
+
+
+
+
+/* MAIN-CARDAPIO COMEÇA AQUI +++ */
+
+#main-cardapio{
+  padding: 2rem 0;
+  background-image: url(https://i.ibb.co/PYs1SKy/05.jpg);
+  background-size: cover;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+
+  .card{
+    margin: 3.125rem 0;
+    border: 0;
+    border-radius: 1.25rem;
+
+    a{
+      margin-top: 0.625rem;
+      background-color: #ddab00;
+      border: 0;
+      border-radius: 1.25rem;
+    }
+
+  }
+
+  .card-body{
+    opacity: 1;
+    color: #023c02;
+    border-radius: 1.25rem;
+  }
+
+  .img-fluid{
+    border-radius: 1.25rem;
+    object-fit: cover;
+  }
+
+  .card-title{
+    font-family: "Titan one", sans-serif;
+    line-height: 3.125rem;
+  }
+
+}
+
+/* MAIN-CARDAPIO TERMINA AQUI --- */
+
+/* MAIN-ABOUT COMEÇA AQUI +++ */
+
+#main-about{
+  padding: 4.375rem 0;
+  background-image: url(https://i.ibb.co/PYs1SKy/05.jpg);
+  background-size: cover;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+
+  .h2, .h1{
+    font-family: "Titan one", sans-serif;
+  }
+
+  .img-fluid{
+    border-radius: 1.25rem;
+  }
+
+  .about-text{
+    font-size: 1.25rem;
+  }
+
+  .details-box{
+    margin: 5rem 3rem 0 3rem !important;
+  }
+
+  .details-text-long p{
+    font-family: "Days one",sans-serif; 
+  }
+
+}
+
+/* MAIN-ABOUT TERMINA AQUI --- */
+
+
+/* FOOTER COMEÇA AQUI +++ */
+
+footer{
+  background-color: #023c02;
+  padding: 3.125rem 3.125rem 0.3125rem 3.125rem;
+
+  .h4{
+    font-family: "Days one",sans-serif;
+  }
+
+  .social-icon {
+    color: white;
+    text-decoration: none;
+
+  }
+
+  .bi{
+    font-size: 2.5rem;
+    margin: 0 0.625rem;
+  }
+
+  .bi::before{
+    vertical-align: middle;
+  }
+
+  .disabled{
+    color: #879d78;
+  }
+
+  .copyright{
+    margin-top: 1.25rem; 
+    color: #879d78;
+  }
+}
+
+/* FOOTER TERMINA AQUI --- */

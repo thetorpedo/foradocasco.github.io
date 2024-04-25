@@ -142,6 +142,10 @@ main{
   z-index: -1;
   padding: 5rem 0;
 
+  .row{
+    margin: 0 !important;
+  }
+
   h2{
     margin: 0 0 2.5rem 0;
   }
@@ -153,6 +157,8 @@ main{
     opacity: 1;
   }
 }
+
+
   .details-icon span{
     font-size: 4.375rem;
     display: inline-flex;

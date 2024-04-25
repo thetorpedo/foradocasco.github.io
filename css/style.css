@@ -140,9 +140,17 @@ main{
   background-image: url(https://i.ibb.co/PYs1SKy/05.jpg);
   background-size: cover;
   z-index: -1;
+  padding: 5rem 0;
 
   h2{
-    margin: 4.375rem 0 2.5rem 0;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .line{
+    width: 80%;
+    border: 3px solid #023c02;
+    border-radius: 20px;
+    opacity: 1;
   }
 }
   .details-icon span{
@@ -151,17 +159,12 @@ main{
     justify-content: center;
     align-items: center;
     width: 6.25rem;
-    height: 6.25rem;
-    border: solid 0.875rem;
-    border-color: #023c02;
-    border-radius: 50%;
-    margin: 0 0.3125rem;
-    padding: 40px;
+    height: 100%;
   }
 
   .details div{
     width: fit-content;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .details-box{

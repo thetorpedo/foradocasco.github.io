@@ -1,21 +1,21 @@
 {
   "itens": [
     {
-      "nome": "Escondidinho de Soja",
+      "nome": "Escondidinho de Arroz",
       "preco": "R$17,99",
-      "descricao": "Pur\u00ea cremoso escondendo nosso molho especial de prote\u00edna de soja, coberto com queijo.",
+      "descricao": "Purê cremoso escondendo nosso molho especial de proteína de soja, coberto com queijo.",
       "imagem": "https://i.ibb.co/KG62r2z/imagem-2024-04-23-130523089.png"
     },
     {
       "nome": "Lasanha Bolonhesa Veg.",
       "preco": "R$16,99",
-      "descricao": "Molho de tomate, prote\u00edna de soja (PTS) e molho branco fresquinho.",
+      "descricao": "Molho de tomate, proteína de soja (PTS) e molho branco fresquinho.",
       "imagem": "https://i.ibb.co/5RzDxwN/imagem-2024-04-23-130818631.png"
     },
     {
-      "nome": "Lasanha de Queijos com Br\u00f3colis",
+      "nome": "Lasanha de Queijos com Brócolis",
       "preco": "R$19,99",
-      "descricao": "Molho de queijo mussarela, provolone e parmes\u00e3o com br\u00f3colis fresquinho.",
+      "descricao": "Molho de queijo mussarela, provolone e parmesão com brócolis fresquinho.",
       "imagem": "https://i.ibb.co/d7XjG0s/Whats-App-Image-2024-04-23-at-9-08-11-PM-1.jpg"
     },
     {

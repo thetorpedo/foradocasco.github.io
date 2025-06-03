@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "cardapio"
+    label: "Cardápio"
+    files:
+      - file: "data/cardapio.json"
+        label: "Pratos"
+        name: "pratos"
+        fields:
+          - label: "Itens"
+            name: "itens"
+            widget: "list"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Preço", name: "preco", widget: "string" }
+              - { label: "Descrição", name: "descricao", widget: "text" }
+              - { label: "Imagem", name: "imagem", widget: "image" }

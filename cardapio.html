@@ -81,29 +81,29 @@
 
     <!-- Script para carregar os pratos -->
     <script>
-      fetch('data/cardapio.json')
-        .then(response => response.json())
-        .then(data => {
-          const container = document.getElementById('cardapio-container');
-          data.itens.forEach(prato => {
-            const card = document.createElement('div');
-            card.className = "card shadow mb-3";
-            card.innerHTML = `
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="\${prato.imagem}" class="img-fluid rounded-start" />
-                </div>
-                <div class="col-md-8 d-flex flex-column justify-content-between p-3">
-                  <h2 class="card-title">\${prato.nome}</h2>
-                  <h5 class="card-subtitle">\${prato.preco} - RECEITA OVOLACTOVEGETARIANA</h5>
-                  <p class="card-text">\${prato.descricao}</p>
-                  <a href="index.html#delivery" class="btn btn-primary encomendar">Encomendar!</a>
-                </div>
-              </div>
-            `;
-            container.appendChild(card);
-          });
-        });
+fetch('data/cardapio.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('cardapio-container');
+    data.itens.forEach(prato => {
+      const card = document.createElement('div');
+      card.className = "card shadow mb-3";
+      card.innerHTML = `
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${prato.imagem}" class="img-fluid rounded-start" />
+          </div>
+          <div class="col-md-8 d-flex flex-column justify-content-between p-3">
+            <h2 class="card-title">${prato.nome}</h2>
+            <h5 class="card-subtitle">${prato.preco} - RECEITA OVOLACTOVEGETARIANA</h5>
+            <p class="card-text">${prato.descricao}</p>
+            <a href="index.html#delivery" class="btn btn-primary encomendar">Encomendar!</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  });
     </script>
   </body>
 </html>

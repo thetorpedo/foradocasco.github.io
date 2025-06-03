@@ -3,7 +3,7 @@
     {
       "nome": "Escondidinho de Soja",
       "preco": "R$17,99",
-      "descricao": "Purê cremoso escondendo nosso molho especial de proteína de soja, coberto com queijo.",
+      "descricao": "Purê cremoso escondendo nosso molho especial de proteína de soja, coberto com queijo. ",
       "imagem": "https://i.ibb.co/KG62r2z/imagem-2024-04-23-130523089.png"
     },
     {
@@ -23,12 +23,6 @@
       "preco": "R$2,99",
       "descricao": "Massa fofinha embrulhada com flocos de coco. Refrescante!",
       "imagem": "https://i.ibb.co/Jk9XPSP/Whats-App-Image-2024-04-23-at-9-08-10-PM.jpg"
-    },
-    {
-      "nome": "Twste",
-      "preco": "1",
-      "descricao": "Teste",
-      "imagem": "/images/uploads/screenshot_20250530-005022.png"
     }
   ]
 }

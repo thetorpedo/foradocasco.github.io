@@ -22,3 +22,14 @@ collections:
               - { label: "Preço", name: "preco", widget: "string" }
               - { label: "Descrição", name: "descricao", widget: "text" }
               - { label: "Imagem", name: "imagem", widget: "image" }
+  - name: "destaque"
+    label: "Prato em Destaque"
+    files:
+      - file: "data/destaque.json"
+        label: "Bloco de Destaque (Home)"
+        name: "destaque_home"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Nome do prato", name: "nome", widget: "string" }
+          - { label: "Link do botão", name: "link", widget: "string" }
+          - { label: "Texto do botão", name: "botao", widget: "string" }

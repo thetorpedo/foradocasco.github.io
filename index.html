@@ -20,32 +20,6 @@
 
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    <script>
-      document.getElementById("btn-whatsapp").addEventListener("click", function (e) {
-        e.preventDefault();
-    
-        const nome = document.getElementById("nomeCompleto").value;
-        const celular = document.getElementById("celular").value;
-        const endereco = document.getElementById("endereco").value;
-        const email = document.getElementById("email").value;
-        const assunto = document.getElementById("assunto").value;
-        const pedido = document.getElementById("pedido").value;
-    
-        const mensagem = `Olá! Gostaria de fazer uma encomenda:%0A
-    Nome: ${nome}%0A
-    Celular: ${celular}%0A
-    Endereço: ${endereco}%0A
-    Email: ${email}%0A
-    Assunto: ${assunto}%0A
-    Pedido: ${pedido}`;
-    
-        const numero = "5599999999999"; // <-- substitua aqui pelo número do delivery
-        const url = `https://wa.me/${numero}?text=${mensagem}`;
-    
-        window.open(url, "_blank");
-      });
-    </script>
     
   </head>
   <body>
@@ -335,5 +309,31 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+      document.getElementById("btn-whatsapp").addEventListener("click", function (e) {
+        e.preventDefault();
+    
+        const nome = document.getElementById("nomeCompleto").value;
+        const celular = document.getElementById("celular").value;
+        const endereco = document.getElementById("endereco").value;
+        const email = document.getElementById("email").value;
+        const assunto = document.getElementById("assunto").value;
+        const pedido = document.getElementById("pedido").value;
+    
+        const mensagem = `Olá! Gostaria de fazer uma encomenda:%0A
+    Nome: ${nome}%0A
+    Celular: ${celular}%0A
+    Endereço: ${endereco}%0A
+    Email: ${email}%0A
+    Assunto: ${assunto}%0A
+    Pedido: ${pedido}`;
+    
+        const numero = "5599999999999"; // <-- substitua aqui pelo número do delivery
+        const url = `https://wa.me/${numero}?text=${mensagem}`;
+    
+        window.open(url, "_blank");
+      });
+    </script>
+    
   </body>
 </html>

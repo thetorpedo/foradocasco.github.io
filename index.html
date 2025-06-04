@@ -333,6 +333,18 @@
         window.open(url, "_blank");
       });
     </script>
+
+    <script>
+  fetch('data/destaque.json')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('destaque-titulo').textContent = data.titulo;
+      document.getElementById('destaque-nome').textContent = data.nome;
+      document.getElementById('destaque-botao').textContent = data.botao;
+      document.getElementById('destaque-botao').href = data.link;
+    });
+</script>
+
     
   </body>
 </html>

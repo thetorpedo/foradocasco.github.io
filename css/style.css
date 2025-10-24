@@ -551,6 +551,53 @@ footer{
 }
 
 
+/* ===== Checkout / Modal do Carrinho ===== */
+#cartModal .modal-header {
+  background-color: #4cb900;
+  color: white;
+  font-family: "Titan One", sans-serif;
+}
+
+#cartModal .form-label {
+  font-weight: 600;
+  color: #023c02;
+}
+
+#cartModal input,
+#cartModal textarea {
+  border-radius: 0.8rem;
+  border: 2px solid #c9edaf;
+}
+
+#cartModal input:focus,
+#cartModal textarea:focus {
+  border-color: #4cb900;
+  box-shadow: 0 0 0 0.2rem rgba(76, 185, 0, 0.25);
+}
+
+#cartModal .btn-success {
+  background-color: #4cb900;
+  border: none;
+  border-radius: 1rem;
+  font-weight: bold;
+}
+
+#cartModal .btn-success:hover {
+  background-color: #388c00;
+}
+
+#cartModal .btn-danger {
+  background-color: #ddab00;
+  border: none;
+  border-radius: 1rem;
+  color: #023c02;
+  font-weight: bold;
+}
+
+#cartModal .btn-danger:hover {
+  background-color: #b88b00;
+}
+
 
 
 

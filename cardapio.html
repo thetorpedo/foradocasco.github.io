@@ -70,7 +70,7 @@
         </div>
         <div class="row">
           <div class="col-12 text-center copyright">
-            <p>Site desenvolvido por alunos UNISAPIENS. © Todos os direitos reservados - 2024</p>
+            <p>Site desenvolvido por alunos UNISAPIENS. Thiago de Souza Borges - Isnar Saud Morheb - Dimarco Fiori Dalssasso - João Henrique - João Paulo - Leonardo Frez /n © Todos os direitos reservados - 2024</p>
           </div>
         </div>
       </div>
@@ -103,11 +103,11 @@ fetch('data/cardapio.json')
             <!-- Botões -->
             <div class="d-flex gap-2">
               <a href="index.html#delivery" class="btn btn-outline-primary">Encomendar</a>
-              <button class="btn btn-success btn-add-cart"
+              <button class="btn-add-cart"
                 data-nome="${prato.nome}"
                 data-preco="${prato.preco}"
                 data-img="${prato.imagem}">
-                + Carrinho
+                Adicionar ao carrinho
               </button>
             </div>
           </div>
@@ -136,7 +136,7 @@ fetch('data/cardapio.json')
         </div>
         <div class="modal-footer">
           <button id="clear-cart" type="button" class="btn btn-secondary">Limpar</button>
-          <button id="checkout-whatsapp" type="button" class="btn btn-primary">Finalizar pedido (WhatsApp)</button>
+          <button id="checkout-whatsapp" type="button" class="btn btn-primary">Enviar pedido</button>
         </div>
       </div>
     </div>

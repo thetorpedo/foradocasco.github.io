@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: panel
+  branch: carrinho
   login: true
 
 media_folder: "images/uploads"

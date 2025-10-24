@@ -22,6 +22,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     
   </head>
+  <!-- CART MODAL -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">Meu Carrinho</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items"></div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <strong>Total:</strong>
+          <h5 id="cart-total">R$0,00</h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="clear-cart" type="button" class="btn btn-secondary">Limpar</button>
+        <button id="checkout-whatsapp" type="button" class="btn btn-primary">Finalizar pedido (WhatsApp)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Botão flutuante de abrir carrinho -->
+<button id="open-cart-btn" class="btn btn-success" style="position:fixed; right:20px; bottom:20px; z-index:2000;">
+  Carrinho <span id="cart-count" class="badge bg-danger">0</span>
+</button>
+
   <body>
     <header class="shadow-lg">
       <nav class="navbar navbar-expand-lg">
@@ -348,3 +377,4 @@
     
   </body>
 </html>
+

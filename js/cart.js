@@ -141,16 +141,18 @@ function checkoutToWhatsApp() {
     return;
   }
 
-  const nome = prompt("Informe seu nome completo:");
-  const telefone = prompt("Informe seu número de telefone:");
-  const endereco = prompt("Informe o endereço de entrega:");
-  const observacao = prompt("Alguma observação adicional? (opcional)");
+  // Coleta os dados do formulário
+  const nome = document.getElementById("checkout-nome").value.trim();
+  const telefone = document.getElementById("checkout-telefone").value.trim();
+  const endereco = document.getElementById("checkout-endereco").value.trim();
+  const observacao = document.getElementById("checkout-observacoes").value.trim();
 
   if (!nome || !telefone || !endereco) {
-    alert("Por favor, preencha todos os dados para finalizar o pedido.");
+    alert("Por favor, preencha todos os campos obrigatórios.");
     return;
   }
 
+  // Monta mensagem formatada
   let mensagem = `🌿 *FORA DO CASCO - NOVO PEDIDO!* 🌿%0A%0A`;
   mensagem += `👤 *Cliente:* ${nome}%0A`;
   mensagem += `📞 *Telefone:* ${telefone}%0A`;
@@ -162,19 +164,19 @@ function checkoutToWhatsApp() {
   cart.forEach((item) => {
     const subtotal = item.preco * item.quantidade;
     total += subtotal;
-    mensagem += `• ${item.nome} x${item.quantidade} — ${formatNumberToBRL(
-      subtotal
-    )}%0A`;
+    mensagem += `• ${item.nome} x${item.quantidade} — ${formatNumberToBRL(subtotal)}%0A`;
   });
 
-  mensagem += `%0A💰 *Total:* ${formatNumberToBRL(
-    total
-  )}%0A%0A✅ *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.%0A`;
+  mensagem += `%0A💰 *Total:* ${formatNumberToBRL(total)}%0A`;
+  mensagem += `%0A✅ *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.%0A`;
 
-  const numero = "5599999999999"; // <-- Substitua pelo número real
+  // Número de destino
+  const numero = "5599999999999"; // substitua pelo número real
   const url = `https://wa.me/${numero}?text=${mensagem}`;
   window.open(url, "_blank");
 }
+
+
 
 // ---------------- eventos globais ----------------
 document.addEventListener("click", function (e) {

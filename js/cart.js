@@ -171,7 +171,7 @@ function checkoutToWhatsApp() {
   mensagem += `%0A✅ *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.%0A`;
 
   // Número de destino
-  const numero = "5599999999999"; // substitua pelo número real
+  const numero = "5569985009550"; // substitua pelo número real
   const url = `https://wa.me/${numero}?text=${mensagem}`;
   window.open(url, "_blank");
 }

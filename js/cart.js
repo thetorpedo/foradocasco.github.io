@@ -153,12 +153,12 @@ function checkoutToWhatsApp() {
   }
 
   // Monta mensagem formatada (usando \n para quebras de linha)
-  let mensagem = `🌿 *FORA DO CASCO - NOVO PEDIDO* 🌿\n\n`;
-  mensagem += `👤 *Cliente:* ${nome}\n`;
-  mensagem += `📞 *Telefone:* ${telefone}\n`;
-  mensagem += `🏠 *Endereço:* ${endereco}\n`;
-  if (observacao) mensagem += `📝 *Observações:* ${observacao}\n`;
-  mensagem += `\n🛒 *Itens do Pedido:*\n`;
+  let mensagem = ` *FORA DO CASCO - NOVO PEDIDO* \n\n`;
+  mensagem += ` *Cliente:* ${nome}\n`;
+  mensagem += ` *Telefone:* ${telefone}\n`;
+  mensagem += ` *Endereço:* ${endereco}\n`;
+  if (observacao) mensagem += ` *Observações:* ${observacao}\n`;
+  mensagem += `\n *Itens do Pedido:*\n`;
 
   let total = 0;
   cart.forEach((item) => {
@@ -167,8 +167,8 @@ function checkoutToWhatsApp() {
     mensagem += `• ${item.nome} x${item.quantidade} — ${formatNumberToBRL(subtotal)}\n`;
   });
 
-  mensagem += `\n💰 *Total:* ${formatNumberToBRL(total)}\n`;
-  mensagem += `\n✅ *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.\n`;
+  mensagem += `\n *Total:* ${formatNumberToBRL(total)}\n`;
+  mensagem += `\n *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.\n`;
 
   // Número de destino
   const numero = "5569985009550"; // substitua pelo número real

@@ -350,28 +350,48 @@
 </script>
 
   <!-- CART MODAL -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Meu Carrinho</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body">
-          <div id="cart-items"></div>
-          <hr>
-          <div class="d-flex justify-content-between align-items-center">
-            <strong>Total:</strong>
-            <h5 id="cart-total">R$0,00</h5>
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white">
+        <h5 class="modal-title" id="cartModalLabel">Seu Carrinho</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Itens do carrinho -->
+        <div id="cart-items"></div>
+
+        <hr>
+        <h5 class="text-end mt-3">Total: <span id="cart-total">R$ 0,00</span></h5>
+
+        <hr>
+        <h5 class="mt-4 mb-3">Dados para entrega</h5>
+        <form id="checkout-form">
+          <div class="mb-3">
+            <label for="checkout-nome" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" id="checkout-nome" placeholder="Digite seu nome" required>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button id="clear-cart" type="button" class="btn btn-secondary">Limpar</button>
-          <button id="checkout-whatsapp" type="button" class="btn btn-primary">Finalizar pedido (WhatsApp)</button>
-        </div>
+          <div class="mb-3">
+            <label for="checkout-telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="checkout-telefone" placeholder="(69) 99999-9999" required>
+          </div>
+          <div class="mb-3">
+            <label for="checkout-endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="checkout-endereco" placeholder="Rua, número, bairro..." required>
+          </div>
+          <div class="mb-3">
+            <label for="checkout-observacoes" class="form-label">Observações (opcional)</label>
+            <textarea class="form-control" id="checkout-observacoes" rows="3" placeholder="Ex: sem cebola, entregar no portão..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="clear-cart">Esvaziar Carrinho</button>
+        <button type="button" class="btn btn-success" id="checkout-whatsapp">Finalizar Pedido via WhatsApp</button>
       </div>
     </div>
   </div>
+</div>
   
   <!-- Botão flutuante de abrir carrinho -->
   <button id="open-cart-btn" class="btn btn-success" style="position:fixed; right:20px; bottom:20px; z-index:2000;">
@@ -379,6 +399,7 @@
   </button>
   </body>
 </html>
+
 
 
 

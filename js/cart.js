@@ -156,7 +156,7 @@ document.addEventListener('click', function (e) {
     addToCart(nome, preco, img);
     // feedback visual simples
     e.target.textContent = 'Adicionado';
-    setTimeout(() => { e.target.textContent = '+ Carrinho'; }, 900);
+    setTimeout(() => { e.target.textContent = 'Adicionar ao carrinho'; }, 900);
   }
 });
 

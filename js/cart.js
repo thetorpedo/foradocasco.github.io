@@ -1,4 +1,3 @@
-<script>
 // ---------------- utilidades ----------------
 function parseBRLToNumber(str) {
   // Recebe "R$ 17,99" ou "R$17,99" ou "17,99" e retorna 17.99
@@ -188,4 +187,3 @@ document.addEventListener('DOMContentLoaded', function () {
   // inicializar contador
   updateCartUI();
 });
-</script>

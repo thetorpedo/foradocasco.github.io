@@ -97,7 +97,17 @@ fetch('data/cardapio.json')
             <h2 class="card-title">${prato.nome}</h2>
             <h5 class="card-subtitle">${prato.preco} - RECEITA OVOLACTOVEGETARIANA</h5>
             <p class="card-text">${prato.descricao}</p>
-            <a href="index.html#delivery" class="btn btn-primary encomendar">Encomendar!</a>
+          
+            <!-- Botões -->
+            <div class="d-flex gap-2">
+              <a href="index.html#delivery" class="btn btn-outline-primary">Encomendar</a>
+              <button class="btn btn-success btn-add-cart"
+                data-nome="${prato.nome}"
+                data-preco="${prato.preco}"
+                data-img="${prato.imagem}">
+                + Carrinho
+              </button>
+            </div>
           </div>
         </div>
       `;

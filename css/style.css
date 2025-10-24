@@ -438,6 +438,7 @@ footer{
   margin-top: 0.625rem;
   font-size: 0.95rem;
   transition: 0.2s;
+  padding: 0 20px;
 }
 
 .btn-add-cart:hover {
@@ -548,6 +549,7 @@ footer{
     padding: 0.4rem 1rem;
   }
 }
+
 
 
 

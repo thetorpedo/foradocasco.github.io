@@ -78,9 +78,14 @@
                 <h1 class="card-title" id="destaque-nome">Carregando...</h1>
                 <a href="#" class="btn btn-primary detalhes" id="destaque-botao">Ver detalhes!</a>
 
-                <a href="#delivery" class="btn btn-primary encomendar"
-                  >Encomendar!</a
-                >
+                <div class="d-flex gap-2">
+              <button class="btn-add-cart"
+                data-nome="${prato.nome}"
+                data-preco="${prato.preco}"
+                data-img="${prato.imagem}">
+                Adicionar ao carrinho
+              </button>
+            </div>
               </div>
             </div>
           </div>
@@ -325,6 +330,7 @@
   </button>
   </body>
 </html>
+
 
 
 

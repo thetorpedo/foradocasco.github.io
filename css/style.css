@@ -406,7 +406,7 @@ footer{
   background-color: #4cb900;
   border: none;
   border-radius: 1.25rem;
-  font-family: "Titan one", sans-serif;
+  font-family: "Days One", sans-serif;
   font-size: 1rem;
   padding: 0.75rem 1.25rem;
   color: white;
@@ -422,13 +422,13 @@ footer{
 #cart-count {
   background-color: #ddab00;
   color: white;
-  font-weight: bold;
+  font-weight: 10;
   border-radius: 1rem;
   margin-left: 0.3rem;
 }
 
 /* Botões "Adicionar ao carrinho" */
-.btn-add-to-cart {
+.btn-add-cart {
   background-color: #4cb900;
   border: 0;
   color: white !important;
@@ -439,7 +439,7 @@ footer{
   transition: 0.2s;
 }
 
-.btn-add-to-cart:hover {
+.btn-add-cart:hover {
   background-color: #388a00;
   transform: scale(1.05);
 }
@@ -549,6 +549,7 @@ footer{
     padding: 0.4rem 1rem;
   }
 }
+
 
 
 

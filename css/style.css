@@ -433,8 +433,8 @@ footer{
   border: 0;
   color: white !important;
   font-family: "Days one", sans-serif;
-  border-radius: 1.25rem;
-  padding: 0.5rem 1.25rem;
+  border-radius: 0;
+  margin-top: 0.625rem;
   font-size: 0.95rem;
   transition: 0.2s;
 }
@@ -547,6 +547,7 @@ footer{
     padding: 0.4rem 1rem;
   }
 }
+
 
 
 

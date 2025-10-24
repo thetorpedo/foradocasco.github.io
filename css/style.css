@@ -598,6 +598,30 @@ footer{
   background-color: #b88b00;
 }
 
+#main-call {
+  background-color: #c9edaf;
+  color: #023c02;
+  font-family: "Days One", sans-serif;
+}
+
+#main-call h2 {
+  font-family: "Titan One", sans-serif;
+  color: #023c02;
+}
+
+#main-call .btn-success {
+  background-color: #4cb900;
+  border: none;
+  border-radius: 1.25rem;
+  font-weight: bold;
+}
+
+#main-call .btn-success:hover {
+  background-color: #388c00;
+}
+
+
+
 
 
 

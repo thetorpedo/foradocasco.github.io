@@ -448,16 +448,14 @@ footer{
 #cartModal .modal-content {
   border-radius: 1.25rem;
   border: 4px solid #4cb900;
-  background-color: #ffffff;
-  background-image: none;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/000/584/379/small_2x/Abstract_white_background_15.jpg");
+  background-size: cover;
   color: #023c02;
 }
 
 #cartModal .modal-header {
   background-color: #4cb900;
   color: white;
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
   font-family: "Days one", sans-serif;
 }
 
@@ -549,6 +547,7 @@ footer{
     padding: 0.4rem 1rem;
   }
 }
+
 
 
 

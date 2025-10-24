@@ -153,7 +153,7 @@ function checkoutToWhatsApp() {
   }
 
   // Monta mensagem formatada (usando \n para quebras de linha)
-  let mensagem = `🌿 *FORA DO CASCO - NOVO PEDIDO!* 🌿\n\n`;
+  let mensagem = `🌿 *FORA DO CASCO - NOVO PEDIDO* 🌿\n\n`;
   mensagem += `👤 *Cliente:* ${nome}\n`;
   mensagem += `📞 *Telefone:* ${telefone}\n`;
   mensagem += `🏠 *Endereço:* ${endereco}\n`;

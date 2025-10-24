@@ -113,6 +113,7 @@ main{
       background-color: #ddab00;
       border: 0;
       border-radius: 1.25rem;
+      color: white;
     }
 
     a.encomendar{
@@ -547,6 +548,7 @@ footer{
     padding: 0.4rem 1rem;
   }
 }
+
 
 
 

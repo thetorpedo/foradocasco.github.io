@@ -421,15 +421,14 @@ footer{
 
 #cart-count {
   background-color: #ddab00;
-  color: #023c02;
+  color: white;
   font-weight: bold;
   border-radius: 1rem;
   margin-left: 0.3rem;
-  padding: 0 0.4rem;
 }
 
 /* Botões "Adicionar ao carrinho" */
-.add-to-cart {
+.btn-add-to-cart {
   background-color: #4cb900;
   border: 0;
   color: white !important;
@@ -440,7 +439,7 @@ footer{
   transition: 0.2s;
 }
 
-.add-to-cart:hover {
+.btn-add-to-cart:hover {
   background-color: #388a00;
   transform: scale(1.05);
 }
@@ -459,7 +458,7 @@ footer{
   color: white;
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
-  font-family: "Titan one", sans-serif;
+  font-family: "Days one", sans-serif;
 }
 
 #cartModal .modal-footer {
@@ -550,6 +549,7 @@ footer{
     padding: 0.4rem 1rem;
   }
 }
+
 
 
 

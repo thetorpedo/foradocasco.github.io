@@ -430,7 +430,7 @@ footer{
 
 /* Botões "Adicionar ao carrinho" */
 .btn-add-cart {
-  background-color: #4cb900;
+  background-color: #ddab00;
   border: 0;
   color: white !important;
   font-family: "Days one", sans-serif;
@@ -619,6 +619,7 @@ footer{
 #main-call .btn-success:hover {
   background-color: #388c00;
 }
+
 
 
 

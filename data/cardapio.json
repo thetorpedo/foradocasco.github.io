@@ -23,6 +23,12 @@
       "preco": "R$2,99",
       "descricao": "Delicie-se com nosso irresistível Bolo Gelado de Coco!\n\n🥥 Feito com uma massa fofinha e embrulhado generosamente com flocos de coco, este bolo é perfeito para refrescar o seu dia!\n\n🍰 Porção Individual - Sinta o sabor refrescante em cada mordida!\n\n🐢 Não dê uma de tartaruga e faça já sua encomenda!",
       "imagem": "https://i.ibb.co/Jk9XPSP/Whats-App-Image-2024-04-23-at-9-08-10-PM.jpg"
+    },
+    {
+      "nome": "teste",
+      "preco": "121",
+      "descricao": "teste",
+      "imagem": "/images/uploads/dice-d20-icon.png"
     }
   ]
 }

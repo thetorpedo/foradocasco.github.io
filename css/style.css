@@ -438,7 +438,7 @@ footer{
   margin-top: 0.625rem;
   font-size: 0.95rem;
   transition: 0.2s;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 .btn-add-cart:hover {
@@ -619,6 +619,7 @@ footer{
 #main-call .btn-success:hover {
   background-color: #388c00;
 }
+
 
 
 

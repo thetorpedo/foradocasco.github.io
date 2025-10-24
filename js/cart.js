@@ -152,30 +152,34 @@ function checkoutToWhatsApp() {
     return;
   }
 
-  // Monta mensagem formatada
-  let mensagem = `🌿 *FORA DO CASCO - NOVO PEDIDO!* 🌿%0A%0A`;
-  mensagem += `👤 *Cliente:* ${nome}%0A`;
-  mensagem += `📞 *Telefone:* ${telefone}%0A`;
-  mensagem += `🏠 *Endereço:* ${endereco}%0A`;
-  if (observacao) mensagem += `📝 *Observações:* ${observacao}%0A`;
-  mensagem += `%0A🛒 *Itens do Pedido:*%0A`;
+  // Monta mensagem formatada (usando \n para quebras de linha)
+  let mensagem = `🌿 *FORA DO CASCO - NOVO PEDIDO!* 🌿\n\n`;
+  mensagem += `👤 *Cliente:* ${nome}\n`;
+  mensagem += `📞 *Telefone:* ${telefone}\n`;
+  mensagem += `🏠 *Endereço:* ${endereco}\n`;
+  if (observacao) mensagem += `📝 *Observações:* ${observacao}\n`;
+  mensagem += `\n🛒 *Itens do Pedido:*\n`;
 
   let total = 0;
   cart.forEach((item) => {
     const subtotal = item.preco * item.quantidade;
     total += subtotal;
-    mensagem += `• ${item.nome} x${item.quantidade} — ${formatNumberToBRL(subtotal)}%0A`;
+    mensagem += `• ${item.nome} x${item.quantidade} — ${formatNumberToBRL(subtotal)}\n`;
   });
 
-  mensagem += `%0A💰 *Total:* ${formatNumberToBRL(total)}%0A`;
-  mensagem += `%0A✅ *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.%0A`;
+  mensagem += `\n💰 *Total:* ${formatNumberToBRL(total)}\n`;
+  mensagem += `\n✅ *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.\n`;
 
   // Número de destino
   const numero = "5569985009550"; // substitua pelo número real
-  const url = `https://wa.me/${numero}?text=${mensagem}`;
+
+  // *** A MÁGICA ACONTECE AQUI ***
+  // Codifica a mensagem inteira para ser segura para URL
+  const mensagemCodificada = encodeURIComponent(mensagem);
+
+  const url = `https://wa.me/${numero}?text=${mensagemCodificada}`;
   window.open(url, "_blank");
 }
-
 
 
 // ---------------- eventos globais ----------------

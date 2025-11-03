@@ -33,3 +33,13 @@ collections:
           - { label: "Nome do prato", name: "nome", widget: "string" }
           - { label: "Link do botão", name: "link", widget: "string" }
           - { label: "Texto do botão", name: "botao", widget: "string" }
+
+  - name: "cupons"
+    label: "Cupons de Desconto"
+    folder: "cms/cupons"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Código do Cupom", name: "codigo", widget: "string" }
+      - { label: "Tipo de Desconto", name: "tipo", widget: "select", options: ["percentual", "fixo"], default: "percentual" }
+      - { label: "Valor do Desconto", name: "valor", widget: "number", hint: "Se for percentual, use 0.10 para 10% ou 0.25 para 25%" }

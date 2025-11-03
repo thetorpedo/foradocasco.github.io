@@ -37,6 +37,8 @@ collections:
   - name: "cupons"
     label: "Cupons de Desconto"
     folder: "cms/cupons"
+    format: "json"
+    extension: "json"
     create: true
     slug: "{{slug}}"
     fields:

@@ -620,6 +620,27 @@ footer{
   background-color: #388c00;
 }
 
+#coupon-area {
+  margin-top: 1rem;
+}
+
+#coupon-area input {
+  border-radius: 0.6rem 0 0 0.6rem;
+}
+
+#coupon-area button {
+  border-radius: 0 0.6rem 0.6rem 0;
+  background-color: #ddab00;
+  color: #023c02;
+  font-weight: bold;
+  border: none;
+}
+
+#coupon-area button:hover {
+  background-color: #b88b00;
+  color: white;
+}
+
 
 
 

@@ -17,6 +17,9 @@ function formatNumberToBRL(n) {
 // ---------------- estado do carrinho ----------------
 const CART_KEY = "fora_do_casco_cart";
 
+let coupons = {}; // <-- DECLARE AQUI, VAZIA, NO ESCOPO GLOBAL
+let appliedCoupon = null;
+
 function getCart() {
   try {
     return JSON.parse(localStorage.getItem(CART_KEY)) || [];
@@ -145,41 +148,49 @@ function updateCartUI() {
 }
 
 // ---------------- sistema de cupons ----------------
-let appliedCoupon = null;
 
-const coupons = {
-  "CASCO10": 0.10, // 10% de desconto
-  "FORADO15": 0.15, // 15% de desconto
-  "VEGGIE20": 0.20  // 20% de desconto
-};
 
+// Substitua a função inteira por esta
 function applyCoupon() {
-  const input = document.getElementById("coupon-code");
-  const msg = document.getElementById("coupon-message");
-  const code = input.value.trim().toUpperCase();
+  const input = document.getElementById("coupon-code");
+  const msg = document.getElementById("coupon-message");
+  const code = input.value.trim().toUpperCase();
 
-  if (!code) {
-    msg.textContent = "Digite um código de cupom.";
-    msg.classList.remove("text-success");
-    msg.classList.add("text-danger");
-    return;
-  }
+  if (!code) {
+    msg.textContent = "Digite um código de cupom.";
+    msg.classList.remove("text-success");
+    msg.classList.add("text-danger");
+    return;
+  }
 
-  if (coupons[code]) {
-    appliedCoupon = { code, discount: coupons[code] };
-    msg.textContent = `✅ Cupom "${code}" aplicado! Desconto de ${coupons[code] * 100}%`;
-    msg.classList.remove("text-danger");
-    msg.classList.add("text-success");
-    renderCartItems(); // recalcula o total com desconto
-  } else {
-    appliedCoupon = null;
-    msg.textContent = "❌ Cupom inválido.";
-    msg.classList.remove("text-success");
-    msg.classList.add("text-danger");
-    renderCartItems();
-  }
+  // Verifica se o cupom existe no objeto 'coupons' carregado
+  if (coupons[code]) {
+    const couponData = coupons[code]; // Ex: { type: "percentual", value: 0.1 }
+
+    // (Opcional) Adicionar lógica para tipo "fixo" vs "percentual"
+    // Por enquanto, vamos assumir que todos são percentuais
+    if (couponData.type === "percentual") {
+        appliedCoupon = { code, discount: couponData.value };
+        msg.textContent = `✅ Cupom "${code}" aplicado! Desconto de ${couponData.value * 100}%`;
+        msg.classList.remove("text-danger");
+        msg.classList.add("text-success");
+    } else {
+        // Lógica para outros tipos de cupom (ex: valor fixo)
+        // (Não implementado aqui)
+        msg.textContent = "❌ Tipo de cupom não suportado.";
+        msg.classList.remove("text-success");
+        msg.classList.add("text-danger");
+    }
+
+    renderCartItems(); // recalcula o total com desconto
+  } else {
+    appliedCoupon = null;
+    msg.textContent = "❌ Cupom inválido.";
+    msg.classList.remove("text-success");
+    msg.classList.add("text-danger");
+    renderCartItems();
+  }
 }
-
 
 // ---------------- checkout via WhatsApp ----------------
 function checkoutToWhatsApp() {
@@ -275,11 +286,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
   updateCartUI();
 
-  let coupons = {};
-
 async function loadCoupons() {
   try {
-    const res = await fetch("/cms/cupons/");
+    const cRes = await fetch(`/cms/cupons/${file}`);
     const html = await res.text();
 
     // extrai os links dos arquivos .json gerados pelo CMS

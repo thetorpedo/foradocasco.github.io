@@ -286,12 +286,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
   updateCartUI();
 
+// COLE ISTO SUBSTITUINDO A FUNÇÃO 'loadCoupons' INTEIRA
 async function loadCoupons() {
   try {
-    const cRes = await fetch(`/cms/cupons/${file}`);
-    const html = await res.text();
+    // 1. Busca o HTML do DIRETÓRIO /cms/cupons/
+    const res = await fetch("/cms/cupons/"); // <--- CORRIGIDO
+    const html = await res.text(); // <--- CORRIGIDO
 
-    // extrai os links dos arquivos .json gerados pelo CMS
+    // 2. Extrai os links dos arquivos .json gerados pelo CMS
     const regex = /href="([^"]+\.json)"/g;
     let match;
     const couponFiles = [];
@@ -299,33 +301,32 @@ async function loadCoupons() {
       couponFiles.push(match[1]);
     }
 
-    // busca os cupons um por um
-// ... (depois de popular o array couponFiles)
-
-// VERIFIQUE ESTE BLOCO:
-for (const file of couponFiles) { // <-- A variável 'file' é definida AQUI
-    try {
-        // A linha abaixo é a que deu o erro (provavelmente linha 291)
+    // 3. Agora sim, faz o loop e busca CADA arquivo .json
+    for (const file of couponFiles) { // <-- 'file' é definida aqui
+      try {
+        // Busca o arquivo JSON específico
         const cRes = await fetch(`/cms/cupons/${file}`); 
         const cData = await cRes.json();
-        
-        // Adicionei uma verificação para evitar erros se o JSON estiver mal formatado
-        if (cData.codigo && cData.tipo && cData.valor !== undefined) {
-            coupons[cData.codigo.toUpperCase()] = {
-                type: cData.tipo,
-                value: parseFloat(cData.valor)
-            };
-        } else {
-            console.warn("Arquivo de cupom mal formatado, pulando:", file, cData);
-        }
-    } catch (errLoop) {
-        console.error("Erro ao processar o arquivo de cupom:", file, errLoop);
-    }
-}
 
-console.log("Cupons carregados:", coupons);
+        // Adiciona ao objeto global 'coupons'
+        if (cData.codigo && cData.tipo && cData.valor !== undefined) {
+          coupons[cData.codigo.toUpperCase()] = {
+            type: cData.tipo,
+            value: parseFloat(cData.valor),
+          };
+        } else {
+          console.warn("Arquivo de cupom mal formatado, pulando:", file, cData);
+        }
+      } catch (errLoop) {
+        console.error("Erro ao processar o arquivo de cupom:", file, errLoop);
+      }
+    }
+
+    console.log("Cupons carregados:", coupons);
+
   } catch (err) {
-    console.error("Erro ao carregar cupons:", err);
+    // Este catch agora pega erros do 'fetch' inicial (do diretório)
+    console.error("Erro ao carregar lista de cupons:", err);
   }
 }
 

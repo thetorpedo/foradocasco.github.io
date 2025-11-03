@@ -274,4 +274,40 @@ document.addEventListener("DOMContentLoaded", function () {
   if (couponBtn) couponBtn.addEventListener("click", applyCoupon);
   
   updateCartUI();
+
+  let coupons = {};
+
+async function loadCoupons() {
+  try {
+    const res = await fetch("/cms/cupons/");
+    const html = await res.text();
+
+    // extrai os links dos arquivos .json gerados pelo CMS
+    const regex = /href="([^"]+\.json)"/g;
+    let match;
+    const couponFiles = [];
+    while ((match = regex.exec(html)) !== null) {
+      couponFiles.push(match[1]);
+    }
+
+    // busca os cupons um por um
+    for (const file of couponFiles) {
+      const cRes = await fetch(file);
+      const cData = await cRes.json();
+      coupons[cData.codigo.toUpperCase()] = {
+        type: cData.tipo,
+        value: parseFloat(cData.valor)
+      };
+    }
+    console.log("Cupons carregados:", coupons);
+  } catch (err) {
+    console.error("Erro ao carregar cupons:", err);
+  }
+}
+
+  loadCoupons();
+
+  
 });
+
+

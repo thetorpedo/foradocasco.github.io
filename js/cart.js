@@ -228,7 +228,7 @@ function checkoutToWhatsApp() {
   if (appliedCoupon) {
     const descontoValor = total * appliedCoupon.discount;
     total -= descontoValor;
-    mensagem += `*Cupom aplicado:* ${appliedCoupon.code} (-${formatNumberToBRL(descontoValor)})%0A`;
+    mensagem += `*Cupom aplicado:* ${appliedCoupon.code} (-${formatNumberToBRL(descontoValor)})`;
   }
 
   mensagem += `\n *Total:* ${formatNumberToBRL(total)}\n`;

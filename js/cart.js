@@ -286,47 +286,37 @@ document.addEventListener("DOMContentLoaded", function () {
   
   updateCartUI();
 
-// COLE ISTO SUBSTITUINDO A FUNÇÃO 'loadCoupons' INTEIRA
+
+
 async function loadCoupons() {
   try {
-    // 1. Busca o HTML do DIRETÓRIO /cms/cupons/
-    const res = await fetch("/cms/cupons/"); // <--- CORRIGIDO
-    const html = await res.text(); // <--- CORRIGIDO
+    // 1. Busca o ÚNICO arquivo JSON mestre
+    const res = await fetch("/data/cupons.json"); // Ajuste o caminho se necessário
 
-    // 2. Extrai os links dos arquivos .json gerados pelo CMS
-    const regex = /href="([^"]+\.json)"/g;
-    let match;
-    const couponFiles = [];
-    while ((match = regex.exec(html)) !== null) {
-      couponFiles.push(match[1]);
+    if (!res.ok) {
+      throw new Error(`Erro ao buscar cupons: ${res.status} ${res.statusText}`);
     }
 
-    // 3. Agora sim, faz o loop e busca CADA arquivo .json
-    for (const file of couponFiles) { // <-- 'file' é definida aqui
-      try {
-        // Busca o arquivo JSON específico
-        const cRes = await fetch(`/cms/cupons/${file}`); 
-        const cData = await cRes.json();
+    // 2. Converte o JSON em um array de objetos
+    const couponArray = await res.json(); 
 
-        // Adiciona ao objeto global 'coupons'
+    // 3. Processa o array e popula o objeto 'coupons' global
+    if (Array.isArray(couponArray)) {
+      couponArray.forEach((cData) => {
         if (cData.codigo && cData.tipo && cData.valor !== undefined) {
+          // Popula o objeto global que a função applyCoupon usa
           coupons[cData.codigo.toUpperCase()] = {
             type: cData.tipo,
             value: parseFloat(cData.valor),
           };
-        } else {
-          console.warn("Arquivo de cupom mal formatado, pulando:", file, cData);
         }
-      } catch (errLoop) {
-        console.error("Erro ao processar o arquivo de cupom:", file, errLoop);
-      }
+      });
     }
 
     console.log("Cupons carregados:", coupons);
 
   } catch (err) {
-    // Este catch agora pega erros do 'fetch' inicial (do diretório)
-    console.error("Erro ao carregar lista de cupons:", err);
+    console.error("Erro ao carregar cupons:", err);
   }
 }
 

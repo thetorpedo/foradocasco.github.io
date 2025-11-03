@@ -291,16 +291,21 @@ document.addEventListener("DOMContentLoaded", function () {
 async function loadCoupons() {
   try {
     // 1. Busca o ÚNICO arquivo JSON mestre
-    const res = await fetch("/data/cupons.json"); // Ajuste o caminho se necessário
+    // Adicionamos um parâmetro para tentar "burlar" o cache
+    const res = await fetch(`/data/cupons.json?v=${new Date().getTime()}`);
 
     if (!res.ok) {
       throw new Error(`Erro ao buscar cupons: ${res.status} ${res.statusText}`);
     }
 
-    // 2. Converte o JSON em um array de objetos
-    const couponArray = await res.json(); 
+    // 2. Converte o JSON em um OBJETO
+    const couponData = await res.json(); 
 
-    // 3. Processa o array e popula o objeto 'coupons' global
+    // 3. Pega o ARRAY de dentro do objeto
+    // ESTA É A LINHA MAIS IMPORTANTE
+    const couponArray = couponData.lista_de_cupons || []; 
+
+    // 4. Processa o array e popula o objeto 'coupons' global
     if (Array.isArray(couponArray)) {
       couponArray.forEach((cData) => {
         if (cData.codigo && cData.tipo && cData.valor !== undefined) {

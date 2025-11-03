@@ -34,14 +34,17 @@ collections:
           - { label: "Link do botão", name: "link", widget: "string" }
           - { label: "Texto do botão", name: "botao", widget: "string" }
 
+collections:
   - name: "cupons"
-    label: "Cupons de Desconto"
-    folder: "cms/cupons"
-    format: "json"
-    extension: "json"
-    create: true
-    slug: "{{slug}}"
+    label: "Cupons"
+    label_singular: "Cupom"
+    
+    # Em vez de 'folder: "cms/cupons"', use 'file':
+    file: "data/cupons.json" # Salva tudo em 'data/cupons.json'
+    
+    # Use 'list' para permitir adicionar/remover cupons
+    widget: "list" 
     fields:
-      - { label: "Código do Cupom", name: "codigo", widget: "string" }
-      - { label: "Tipo de Desconto", name: "tipo", widget: "select", options: ["percentual", "fixo"], default: "percentual" }
+      - { label: "Código", name: "codigo", widget: "string" }
+      - { label: "Tipo", name: "tipo", widget: "select", options: ["percentual", "fixo"] }
       - { label: "Valor do Desconto", name: "valor", widget: "number", value_type: "float", step: 0.01, hint: "Use 0.10 para 10%, 0.25 para 25% ou 5.00 para R$5,00" }

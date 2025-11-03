@@ -300,15 +300,30 @@ async function loadCoupons() {
     }
 
     // busca os cupons um por um
-    for (const file of couponFiles) {
-      const cRes = await fetch(file);
-      const cData = await cRes.json();
-      coupons[cData.codigo.toUpperCase()] = {
-        type: cData.tipo,
-        value: parseFloat(cData.valor)
-      };
+// ... (depois de popular o array couponFiles)
+
+// VERIFIQUE ESTE BLOCO:
+for (const file of couponFiles) { // <-- A variável 'file' é definida AQUI
+    try {
+        // A linha abaixo é a que deu o erro (provavelmente linha 291)
+        const cRes = await fetch(`/cms/cupons/${file}`); 
+        const cData = await cRes.json();
+        
+        // Adicionei uma verificação para evitar erros se o JSON estiver mal formatado
+        if (cData.codigo && cData.tipo && cData.valor !== undefined) {
+            coupons[cData.codigo.toUpperCase()] = {
+                type: cData.tipo,
+                value: parseFloat(cData.valor)
+            };
+        } else {
+            console.warn("Arquivo de cupom mal formatado, pulando:", file, cData);
+        }
+    } catch (errLoop) {
+        console.error("Erro ao processar o arquivo de cupom:", file, errLoop);
     }
-    console.log("Cupons carregados:", coupons);
+}
+
+console.log("Cupons carregados:", coupons);
   } catch (err) {
     console.error("Erro ao carregar cupons:", err);
   }

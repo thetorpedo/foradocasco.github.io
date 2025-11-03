@@ -34,7 +34,6 @@ collections:
           - { label: "Link do botão", name: "link", widget: "string" }
           - { label: "Texto do botão", name: "botao", widget: "string" }
 
-collections:
   - name: "cupons"
     label: "Cupons"
     label_singular: "Cupom"

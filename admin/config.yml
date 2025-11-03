@@ -33,25 +33,16 @@ collections:
           - { label: "Nome do prato", name: "nome", widget: "string" }
           - { label: "Link do botão", name: "link", widget: "string" }
           - { label: "Texto do botão", name: "botao", widget: "string" }
-
-- name: "cupons"
+  - name: "cupons"
     label: "Cupons"
-    
-    # 1. Deve ser "files" (plural), mesmo para um arquivo só
     files:
-      # 2. O arquivo é definido como um item de lista (com "-")
       - file: "data/cupons.json"
         label: "Lista de Cupons"
         name: "cupons_lista"
-        
-        # 3. "fields" (campos) fica DENTRO da definição do arquivo
         fields:
-          # 4. O widget "list" é o CAMPO principal que conterá os cupons
           - label: "Cupons"
-            name: "lista_de_cupons" # Este é o nome que aparecerá no JSON
+            name: "lista_de_cupons"
             widget: "list"
-            
-            # 5. Estes são os campos de CADA item da lista
             fields:
               - { label: "Código", name: "codigo", widget: "string" }
               - { label: "Tipo", name: "tipo", widget: "select", options: ["percentual", "fixo"] }

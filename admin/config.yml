@@ -42,4 +42,4 @@ collections:
     fields:
       - { label: "Código do Cupom", name: "codigo", widget: "string" }
       - { label: "Tipo de Desconto", name: "tipo", widget: "select", options: ["percentual", "fixo"], default: "percentual" }
-      - { label: "Valor do Desconto", name: "valor", widget: "number", hint: "Se for percentual, use 0.10 para 10% ou 0.25 para 25%" }
+      - { label: "Valor do Desconto", name: "valor", widget: "number", value_type: "float", step: 0.01, hint: "Use 0.10 para 10%, 0.25 para 25% ou 5.00 para R$5,00" }

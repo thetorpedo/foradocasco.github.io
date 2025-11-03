@@ -225,8 +225,14 @@ function checkoutToWhatsApp() {
     total += subtotal;
     mensagem += `• ${item.nome} x${item.quantidade} — ${formatNumberToBRL(subtotal)}\n`;
   });
+  if (appliedCoupon) {
+    const descontoValor = total * appliedCoupon.discount;
+    total -= descontoValor;
+    mensagem += `*Cupom aplicado:* ${appliedCoupon.code} (-${formatNumberToBRL(descontoValor)})%0A`;
+  }
 
   mensagem += `\n *Total:* ${formatNumberToBRL(total)}\n`;
+  
   mensagem += `\n *Agradecemos o pedido!* Entraremos em contato para confirmar o horário de entrega.\n`;
 
   // Número de destino

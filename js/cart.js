@@ -109,7 +109,7 @@ function renderCartItems() {
     btn.addEventListener("click", (e) => {
       const nome = e.target.dataset.nome;
       removeFromCart(nome);
-      renderCartItems();
+      renderms();
     });
   });
   container.querySelectorAll(".quantity-input").forEach((input) => {
@@ -121,8 +121,19 @@ function renderCartItems() {
     });
   });
 
-  const total = cart.reduce((s, it) => s + it.preco * it.quantidade, 0);
+  let total = cart.reduce((s, it) => s + it.preco * it.quantidade, 0);
+
+if (appliedCoupon) {
+  const desconto = total * appliedCoupon.discount;
+  total -= desconto;
+  document.getElementById("cart-total").innerHTML = `
+    ${formatNumberToBRL(total)} <br>
+    <small class="text-success">(${appliedCoupon.code} aplicado)</small>
+  `;
+} else {
   document.getElementById("cart-total").textContent = formatNumberToBRL(total);
+}
+
 }
 
 // ---------------- UI do botão contador ----------------
@@ -132,6 +143,43 @@ function updateCartUI() {
   const badge = document.getElementById("cart-count");
   if (badge) badge.textContent = count;
 }
+
+// ---------------- sistema de cupons ----------------
+let appliedCoupon = null;
+
+const coupons = {
+  "CASCO10": 0.10, // 10% de desconto
+  "FORADO15": 0.15, // 15% de desconto
+  "VEGGIE20": 0.20  // 20% de desconto
+};
+
+function applyCoupon() {
+  const input = document.getElementById("coupon-code");
+  const msg = document.getElementById("coupon-message");
+  const code = input.value.trim().toUpperCase();
+
+  if (!code) {
+    msg.textContent = "Digite um código de cupom.";
+    msg.classList.remove("text-success");
+    msg.classList.add("text-danger");
+    return;
+  }
+
+  if (coupons[code]) {
+    appliedCoupon = { code, discount: coupons[code] };
+    msg.textContent = `✅ Cupom "${code}" aplicado! Desconto de ${coupons[code] * 100}%`;
+    msg.classList.remove("text-danger");
+    msg.classList.add("text-success");
+    renderCartItems(); // recalcula o total com desconto
+  } else {
+    appliedCoupon = null;
+    msg.textContent = "❌ Cupom inválido.";
+    msg.classList.remove("text-success");
+    msg.classList.add("text-danger");
+    renderCartItems();
+  }
+}
+
 
 // ---------------- checkout via WhatsApp ----------------
 function checkoutToWhatsApp() {
@@ -221,5 +269,9 @@ document.addEventListener("DOMContentLoaded", function () {
       checkoutToWhatsApp();
     });
 
+// botão aplicar cupom
+  const couponBtn = document.getElementById("apply-coupon");
+  if (couponBtn) couponBtn.addEventListener("click", applyCoupon);
+  
   updateCartUI();
 });

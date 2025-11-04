@@ -112,7 +112,7 @@ function renderCartItems() {
     btn.addEventListener("click", (e) => {
       const nome = e.target.dataset.nome;
       removeFromCart(nome);
-      renderms();
+      renderCartItems();
     });
   });
   container.querySelectorAll(".quantity-input").forEach((input) => {

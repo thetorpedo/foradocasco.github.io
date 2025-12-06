@@ -4,6 +4,11 @@
       "codigo": "TESTE4213",
       "tipo": "percentual",
       "valor": 0.2
+    },
+    {
+      "codigo": "Codigo123",
+      "tipo": "fixo",
+      "valor": 6.5
     }
   ]
 }

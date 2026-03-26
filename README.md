@@ -1,31 +1,32 @@
-# Projeto Front Page - Fora do Casco
+# Front Page Project - Fora do Casco
 
-Este projeto foi desenvolvido como parte da disciplina de **Desenvolvimento Web** do curso de **Engenharia da Computação** na **Faculdade Unisapiens**.
+This project was developed as part of the **Web Development** course for the **Computer Engineering** program at **Faculdade Unisapiens**.
 
-## Descrição
+## Description
 
-Este site representa a página inicial e institucional fictícia da empresa **Fora do Casco**, especializada em culinária ovolactovegetariana.  
-O objetivo do projeto foi aplicar os conhecimentos de HTML, CSS e JavaScript para desenvolver um site completo, funcional e responsivo, com múltiplas páginas:
+This website represents the fictional institutional home page for **Fora do Casco**, a brand specializing in **ovo-lacto vegetarian cuisine**.
 
-- **Home:** Destaque de prato, vantagens da marca, galeria e formulário de encomenda  
-- **Cardápio:** Lista de produtos com imagens, descrições e preços  
-- **Sobre:** Página institucional apresentando o conceito e os valores do projeto
+The goal of the project was to apply HTML, CSS, and JavaScript knowledge to develop a complete, functional, and responsive website with multiple pages:
 
-## Tecnologias Utilizadas
+* **Home:** Featured dish, brand advantages, gallery, and order form.
+* **Menu:** Product list with images, descriptions, and prices.
+* **About:** Institutional page presenting the project's concept and values.
 
-- HTML5  
-- CSS3  
-- JavaScript  
-- Bootstrap 5.3  
-- Swiper.js (carrossel de imagens)  
-- Google Fonts  
-- Bootstrap Icons  
-- Material Symbols
+## Technologies Used
 
-## Funcionalidades
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap 5.3
+* Swiper.js (image carousel)
+* Google Fonts
+* Bootstrap Icons
+* Material Symbols
 
-- Layout responsivo com Bootstrap  
-- Slider de imagens com Swiper.js  
-- Navegação entre páginas 
-- Formulário de encomenda com múltiplos campos  
-- Conteúdo adaptado para dispositivos móveis
+## Features
+
+* Responsive layout with Bootstrap
+* Image slider with Swiper.js
+* Inter-page navigation
+* Order form with multiple fields
+* Mobile-optimized content
